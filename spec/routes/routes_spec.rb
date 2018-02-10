@@ -10,7 +10,7 @@ RSpec.describe "Renamed routes", :type => :routing do
   end
 
   it 'posts /signup' do
-    expect(:post => 'signup').to route_to(:controller => 'users', :action => 'create')
+    expect(:post => '/users').to route_to(:controller => 'users', :action => 'create')
   end
 
   it "gets /login" do
