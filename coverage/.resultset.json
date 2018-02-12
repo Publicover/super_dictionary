@@ -51,6 +51,10 @@
         1,
         1,
         1,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/jimpublicover/Desktop/super_dictionary/app/models/application_record.rb": [
@@ -126,6 +130,6 @@
         0
       ]
     },
-    "timestamp": 1518400542
+    "timestamp": 1518439869
   }
 }
