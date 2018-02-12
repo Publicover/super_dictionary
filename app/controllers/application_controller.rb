@@ -8,7 +8,9 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in?
-    redirect_to login_path, notice: "You must log in to access this page" unless session[:user_id]
+    unless session[:user_id]
+      redirect_to login_path, notice: "You must log in to access this page"
+    end
   end
 
   def current_user
