@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'oxford_words/index'
+
+  get 'oxford_words/show'
+
+  get 'oxford_words/new'
+
+  get 'oxford_words/edit'
+
+  get 'oxford_words/create'
+
+  get 'oxford_words/update'
+
+  get 'oxford_words/destroy'
+
   resources :users
 
   get 'signup', to: 'users#new', as: 'signup'
