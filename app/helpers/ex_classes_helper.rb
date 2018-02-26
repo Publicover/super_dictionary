@@ -1,0 +1,2 @@
+module ExClassesHelper
+end

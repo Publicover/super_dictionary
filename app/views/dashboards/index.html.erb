@@ -5,11 +5,13 @@
 <center>
   <p>Welcome to the dictionary.</p>
     <br />
-    From the OED:
-    <p><% oxford_result = Oxford.oxford_call('cake') %></p>
-    <% oxford_result.each do |d| %>
-    <li><%= d %></li>
-    <% end %>
+    <!-- From the OED: -->
+    <!-- <p><% oxford_result = Oxford.oxford_call('cake') %></p> -->
+    <!-- <% oxford_result.each do |d| %> -->
+    <!-- <ul><%= d %></ul> -->
+    <!-- <% end %> -->
     <br/>
   <p><%= link_to 'Logout', logout_path, method: :delete %></p>
+  <p><%= link_to 'Create a word', new_ex_class_path %></p>
+  <br />
 </center>

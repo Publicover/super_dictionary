@@ -1,0 +1,25 @@
+<h1>Dashboards#new</h1>
+<p>Find me in app/views/dashboards/new.html.erb</p>
+
+<center>
+
+  <% if @dashboard.errors.any? %>
+  <div id="error_explanation">
+    <p>
+      <%= pluralize(@dashboard.errors.count, "error") %> prohibited
+      this article from being saved:
+    </p>
+    <% @homework.errors.full_messages.each do |msg| %>
+      <li><center><%= msg %></li>
+    <% end %>
+  </div>
+  <% end %>
+  <%= form_for @dashboard do |f| %>
+  <p>
+    <%= f.label 'Word' %>
+    <%= f.text_field :word %>
+  </p>
+    <%= f.submit 'Submit'%>
+  <% end %>
+
+</center>

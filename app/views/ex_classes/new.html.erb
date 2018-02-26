@@ -1,0 +1,10 @@
+<h1>ExClasses#new</h1>
+<p>Find me in app/views/ex_classes/new.html.erb</p>
+
+<center>
+  <br />
+  <%= form_tag ex_classes_show_path do |f| %>
+    <p><%= text_field_tag :word %></p>
+    <p><%= button_tag 'Get word' %></p>
+  <% end %>
+</center>

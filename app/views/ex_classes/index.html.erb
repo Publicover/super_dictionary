@@ -1,0 +1,23 @@
+<h1>ExClasses#index</h1>
+<p>Find me in app/views/ex_classes/index.html.erb</p>
+
+<center>
+  See all your words:
+
+  <table>
+    <thead>
+      <tr>
+        <th>Word</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @ex_classes.each do |x| %>
+        <tr>
+          <td><%= x.word %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<br />
+<p>Make a new word: <%= link_to 'WORDS', new_ex_class_path %></p>
+</center>
