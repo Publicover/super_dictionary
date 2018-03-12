@@ -3,7 +3,9 @@
 
 <center>
   <p>Your word:</p>
-  <p><%= Oxford.oxford_call(@ex_class) %></p>
+  <p><% Oxford.oxford_call(@ex_class).each do |x| %>
+    <li><%= x.capitalize %></li>
+    <% end %>
   <br />
   <p>
   <%= link_to 'See all words', ex_classes_path %>

@@ -1,2 +1,26 @@
 <h1>OxfordWords#new</h1>
 <p>Find me in app/views/oxford_words/new.html.erb</p>
+
+<center>
+  <%= form_for @oxford_word do |f| %>
+
+    <% if @oxford_word.errors.any? %>
+
+      <div id="error_explanation">
+        <p>
+          <%= pluralize(@oxford_word.errors.count, "error") %> prohibited
+          this article from being saved:
+        </p>
+        <% @oxford_word.errors.full_messages.each do |msg| %>
+          <li><center><%= msg %></li>
+        <% end %>
+      </div>
+
+    <% end %>
+  <p>
+    <%= f.label "Word" %><br>
+    <%= f.text_field :word %>
+  </p>
+    <%= f.submit %>
+  <% end %>
+</center>

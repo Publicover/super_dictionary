@@ -1,16 +1,18 @@
 class OxfordWord < ApplicationRecord
   belongs_to :user
 
-  def initialize(word)
+  # def initialize(word)
+  #
+  # end
+
+  def oxford_def
     @oxford_response = HTTParty.get("https://od-api.oxforddictionaries.com:443/api/v1/entries/en/#{@word}",
       :headers => {
         "Accept": "application/json",
         "app_id": "#{ENV['OXFORD_APP_ID']}",
         "app_key": "#{ENV['OXFORD_APP_KEY']}"
       })
-  end
 
-  def oxford_def
     if @oxford_response.include?("!DOCTYPE")
       'Word not found'
     else
