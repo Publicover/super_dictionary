@@ -24,11 +24,4 @@ class OxfordCall < ApplicationRecord
       defs.flatten
     end
   end
-
-  private
-
-    def get_def
-      @oxford_call.definition = OxfordCall.oxford_api(@oxford_call.word)
-    end
-
 end
