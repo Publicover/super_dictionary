@@ -1,19 +1,27 @@
 <h1>OxfordCalls#index</h1>
 <p>Find me in app/views/oxford_calls/index.html.erb</p>
 
+<center>
 <h1>Listing Words</h1>
 
 <table>
   <tr>
     <th>Word</th>
     <th>Definition</th>
+    <th>File Type</th>
   </tr>
 
   <% @oxford_calls.each do |word| %>
     <tr>
-      <td><%= word.word %>
-      <td><%= word.definition %>
+      <td><%= word.word %></td>
+      <td><%= word.definition %></td>
+      <td><%= (word.definition).class %></td>
       <td><%= link_to 'Show', oxford_call_path(word) %></td>
     </tr>
   <% end %>
 </table>
+
+
+<br>
+<%= link_to 'Make a new word', new_oxford_call_path %>
+</center>
