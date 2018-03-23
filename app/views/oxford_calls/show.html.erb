@@ -11,8 +11,9 @@
 
   <p>
     <strong>Definition:</strong>
-    <p><%= @oxford_call.definition %></p>
-  </p>
+    <p><% @oxford_call.definition.gsub('[', '').gsub(']', '').split(',').each do |definition| %>
+      <li><%= definition %></li></p>
+      <% end %>
 
 <br>
 <p><%= link_to 'Make another word', new_oxford_call_path %></p>
