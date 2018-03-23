@@ -36,6 +36,7 @@ gem 'rubocop', require: false
 gem 'simplecov'
 gem 'jwt'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'httparty'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,0 +1,21 @@
+<h1>OxfordCalls#show</h1>
+<p>Find me in app/views/oxford_calls/show.html.erb</p>
+
+<center>
+
+  <h1>OXFORD CALLS</h1>
+  <p>
+    <strong>Word:</strong>
+    <p><%= @oxford_call.word %></p>
+  </p>
+
+  <p>
+    <strong>Definition:</strong>
+    <p><%= @oxford_call.definition %></p>
+  </p>
+
+<br>
+<p><%= link_to 'Make another word', new_oxford_call_path %></p>
+<p><%= link_to 'See all words', oxford_calls_path %></p>
+
+</center>

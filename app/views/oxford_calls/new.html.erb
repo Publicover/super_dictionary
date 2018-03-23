@@ -1,0 +1,32 @@
+<h1>OxfordCalls#new</h1>
+<p>Find me in app/views/oxford_calls/new.html.erb</p>
+
+<center>
+
+<%= form_for @oxford_call do |f| %>
+
+<% if @oxford_call.errors.any? %>
+  <div id="error_explanation">
+    <p>
+      <%= pluralize(@user.errors.count, "error") %> prohibited
+      this article from being saved:
+    </p>
+    <% @oxford_call.errors.full_messages.each do |msg| %>
+      <li><center><%= msg %></li>
+    <% end %>
+  </div>
+  <% end %>
+
+  <p>
+    <%= f.label "Word" %></br>
+    <%= f.text_field :word %>
+    <!-- <% new_term = f.text_field :word %> -->
+  </p>
+
+  <!-- <%= f.hidden_field :role, value: "student" %> -->
+  <!-- <%= f.hidden_field :definition, value: OxfordCall.oxford_api(@oxford_call.word) %> -->
+
+  <%= f.submit "CREATE SUPER DEFINITION" %>
+<% end %>
+
+</center>
