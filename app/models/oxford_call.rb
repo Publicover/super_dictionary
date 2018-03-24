@@ -3,7 +3,8 @@
 
 class OxfordCall < ApplicationRecord
   include HTTParty
-  serialize :definitions, Array
+  # serialize :definitions, Array
+  # TODO: SERIALIZE
 
   def self.oxford_api(term)
     call_url = "https://od-api.oxforddictionaries.com:443/api/v1/entries/en/#{term}"
