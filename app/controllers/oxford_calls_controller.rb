@@ -16,7 +16,7 @@ class OxfordCallsController < ApplicationController
 
   def create
     @oxford_call = OxfordCall.new(oxford_call_params)
-    @oxford_call.definition = OxfordCall.oxford_api(@oxford_call.word).flatten
+    @oxford_call.definition = OxfordCall.oxford_api(@oxford_call.word)
 
     if @oxford_call.save
       redirect_to @oxford_call

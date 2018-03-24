@@ -3,7 +3,7 @@
 
 class OxfordCall < ApplicationRecord
   include HTTParty
-  # serialize :definitions, Array
+  serialize :definitions, Array
   # TODO: SERIALIZE
 
   def self.oxford_api(term)
@@ -23,7 +23,7 @@ class OxfordCall < ApplicationRecord
       def_block.each do |word|
         defs << word["definitions"]
       end
-      defs.flatten
+      defs
     end
   end
 end
