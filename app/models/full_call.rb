@@ -1,0 +1,2 @@
+class FullCall < ApplicationRecord
+end

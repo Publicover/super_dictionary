@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :oxford_calls
+  resources :full_calls
 
   get 'signup', to: 'users#new', as: 'signup'
   get 'login' => 'sessions#new'

@@ -1,0 +1,23 @@
+<h1>FullCalls#show</h1>
+<p>Find me in app/views/full_calls/show.html.erb</p>
+
+<center>
+
+  <h1>OXFORD CALLS</h1>
+  <p><h3>@full_call.definition.class: <%= @full_call.definition.class %></p></h3>
+  <p>
+    <strong>Word:</strong>
+    <p><%= @full_call.word %></p>
+  </p>
+
+  <p>
+    <strong>Definition:</strong>
+    <p><% @full_call.definition.gsub('[', '').gsub(']', '').split(',').each do |definition| %>
+      <li><%= definition %></li></p>
+      <% end %>
+
+<br>
+<p><%= link_to 'Make another word', new_oxford_call_path %></p>
+<p><%= link_to 'See all words', oxford_calls_path %></p>
+
+</center>
