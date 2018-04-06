@@ -3,7 +3,7 @@
 
 class OxfordCall < ApplicationRecord
   include HTTParty
-  serialize :definitions, JSON
+  serialize(:definitions, JSON)
   # TODO: SERIALIZE
 
   def self.oxford_api(term)
