@@ -7,6 +7,9 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to root_path, notice: 'You have logged in.'
+      # if user.s_jregistered == false
+      #   s_jsignup
+      # end
     else
       flash.now[:alert] = 'Credentials incorrect.'
       render 'new'

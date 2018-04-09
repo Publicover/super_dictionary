@@ -13,6 +13,30 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # def s_j_signup
+  #   response = HTTParty.post('https://samueljohnsonapi.herokuapp.com/signup',
+  #     :body => {
+  #         "name" => "#{@current_user.name}",
+  #         "email" => "#{@current_user.email}",
+  #         "password" => "#{@current_user.password}"
+  #       }
+  #     )
+  #   @current_user.s_jregistered = true
+  #   @current_user.token = response['auth_token']
+  # end
+  #
+  # def s_j_check_auth
+  #   unless @current_user.s_jtoken
+  #     response = HTTParty.post("https://samueljohnsonapi.herokuapp.com/auth/login",
+  #       :body => {
+  #         "name": "#{@current_user.name}",
+  #         "email": "#{@current_user.email}",
+  #         "password": "#{@current_user.password}"
+  #       })
+  #     @current_user.s_jtoken = response['auth_token']
+  #   end
+  # end
+
   def current_user
     @current_user ||= User.find(session[:user_id])
   end
