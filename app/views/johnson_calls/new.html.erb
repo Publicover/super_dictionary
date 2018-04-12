@@ -1,0 +1,29 @@
+<h1>JohnsonCalls#new</h1>
+<p>Find me in app/views/johnson_calls/new.html.erb</p>
+
+<center>
+
+<%= form_for @johnson_call do |f| %>
+
+  <% if @johnson_call.errors.any? %>
+    <div id="error_explanation">
+      <p>
+        <%= pluralize(@user.errors.count, "error") %> prohibited
+        this article from being saved:
+      </p>
+      <% @johnson_call.errors.full_messages.each do |msg| %>
+        <li><center><%= msg %></li>
+      <% end %>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label "Word" %></br>
+    <%= f.text_field :word %>
+  </p>
+
+  <%= f.submit "CREATE SUPER DEFINITION" %>
+<% end %>
+<br>
+<p><%= link_to 'Dashboard', root_path %></p>
+</center>

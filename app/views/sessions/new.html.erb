@@ -1,8 +1,12 @@
 <h1>Sessions#new</h1>
 <p>Find me in app/views/sessions/new.html.erb</p>
 
+<center>
+
 <%= form_tag do %>
   <p><%= email_field_tag :email, nil, placeholder: "Email" %></p>
   <p><%= password_field_tag :password, nil, placeholder: "Password" %></p>
   <p><%= submit_tag "Log in"%></p>
 <% end %>
+
+</center>

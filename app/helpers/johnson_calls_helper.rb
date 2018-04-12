@@ -1,0 +1,2 @@
+module JohnsonCallsHelper
+end

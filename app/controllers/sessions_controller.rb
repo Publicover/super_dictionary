@@ -6,10 +6,10 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
+      # session[:email] = user.email
+      # session[:johnson_registered] = user.johnson_registered
+      # session[:johnson_token] = user.johnson_token
       redirect_to root_path, notice: 'You have logged in.'
-      # if user.s_jregistered == false
-      #   s_jsignup
-      # end
     else
       flash.now[:alert] = 'Credentials incorrect.'
       render 'new'

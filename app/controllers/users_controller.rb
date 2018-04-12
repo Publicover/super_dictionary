@@ -13,6 +13,14 @@ class UsersController < ApplicationController
     end
   end
 
+  # def self.current
+  #   Thread.current[:user]
+  # end
+  #
+  # def self.current=(user)
+  #   Thread.current[:user] = user
+  # end
+
   private
 
   def user_params

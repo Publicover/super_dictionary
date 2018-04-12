@@ -1,5 +1,5 @@
-<h1>OxfordCalls#index</h1>
-<p>Find me in app/views/oxford_calls/index.html.erb</p>
+<h1>JohnsonCalls#index</h1>
+<p>Find me in app/views/johnson_calls/index.html.erb</p>
 
 <center>
 <h1>Listing Words</h1>
@@ -11,16 +11,15 @@
     <th>File Type</th>
   </tr>
 
-  <% @oxford_calls.each do |word| %>
+  <% @johnson_calls.each do |word| %>
     <tr>
       <td><%= word.word %></td>
       <td><%= word.definition %></td>
       <td><%= (word.definition).class %></td>
-      <td><%= link_to 'Show', oxford_call_path(word) %></td>
+      <td><%= link_to 'Show', johnson_call_path(word) %></td>
     </tr>
   <% end %>
 </table>
 <br>
-<p><%= link_to 'Make a new word', new_oxford_call_path %></p>
-<p><%= link_to 'Dashboard', root_path %></p>
+<%= link_to 'Make a new Johnson word', new_johnson_call_path %>
 </center>
