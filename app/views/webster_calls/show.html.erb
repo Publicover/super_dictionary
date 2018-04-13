@@ -1,0 +1,21 @@
+<h1>WebsterCalls#show</h1>
+<p>Find me in app/views/webster_calls/show.html.erb</p>
+
+<center>
+
+<h1>WEBSTER CALLS</h1>
+<p><h3>@webster_call.definition.class: <%= @webster_call.definition.class %></p></h3>
+<p>
+  <strong>Word:</strong>
+  <p><%= @webster_call.word %></p>
+</p>
+
+<p>
+  <strong>Definition:</strong>
+<p><%= @webster_call.definition %></p>
+
+<br>
+<p><%= link_to 'Make another Webster word', new_webster_call_path %></p>
+<p><%= link_to 'See all Webster words', webster_calls_path %></p>
+
+</center>

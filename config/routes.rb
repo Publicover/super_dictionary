@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  # get 'webster_calls/index'
+  #
+  # get 'webster_calls/show'
+  #
+  # get 'webster_calls/new'
+  #
+  # get 'webster_calls/edit'
+  #
+  # get 'webster_calls/create'
+  #
+  # get 'webster_calls/update'
+  #
+  # get 'webster_calls/destroy'
+
   # get 'johnson_calls/index'
   #
   # get 'johnson_calls/show'
@@ -31,6 +45,7 @@ Rails.application.routes.draw do
   resources :oxford_calls
   resources :full_calls
   resources :johnson_calls
+  resources :webster_calls
 
   get 'signup', to: 'users#new', as: 'signup'
   get 'login' => 'sessions#new'

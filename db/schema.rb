@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180409133828) do
+ActiveRecord::Schema.define(version: 20180413183156) do
 
   create_table "full_calls", force: :cascade do |t|
     t.string   "word"
@@ -49,6 +49,13 @@ ActiveRecord::Schema.define(version: 20180409133828) do
     t.string   "sj_token",           default: "f"
     t.boolean  "johnson_registered", default: false
     t.string   "johnson_token"
+  end
+
+  create_table "webster_calls", force: :cascade do |t|
+    t.string   "word"
+    t.text     "definition"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
