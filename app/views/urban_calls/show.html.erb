@@ -1,0 +1,21 @@
+<h1>UrbanCalls#show</h1>
+<p>Find me in app/views/urban_calls/show.html.erb</p>
+
+<center>
+
+  <h1>URBAN CALLS</h1>
+  <p><h3>@urban_call.definition.class: <%= @urban_call.definition.class %></p></h3>
+  <p>
+    <strong>Word:</strong>
+    <p><%= @urban_call.word %></p>
+  </p>
+
+  <p>
+    <strong>Definition:</strong>
+  <p><%= @urban_call.definition %></p>
+
+<br>
+<p><%= link_to 'Make another Urban word', new_urban_call_path %></p>
+<p><%= link_to 'See all Urban words', urban_calls_path %></p>
+
+</center>
