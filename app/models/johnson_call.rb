@@ -69,6 +69,8 @@ class JohnsonCall < ApplicationRecord
           "password": "#{ENV['SUPER_DICTIONARY_PW']}",
           "Authorization": "#{@sj_token}"
         })
+      lookup["definition"]
+      # "Word not found" if lookup == "null"
     else
       self.get_sj_token
       self.johnson_api("#{term}")

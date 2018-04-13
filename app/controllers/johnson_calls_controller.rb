@@ -19,7 +19,11 @@ class JohnsonCallsController < ApplicationController
 
   def create
     @johnson_call = JohnsonCall.new(johnson_call_params)
-    @johnson_call.definition = JohnsonCall.johnson_api(@johnson_call.word)
+    if @johnson_call == "null"
+      @johnson_call.definition = "Word not found."
+    else
+      @johnson_call.definition = JohnsonCall.johnson_api(@johnson_call.word)
+    end
 
     if @johnson_call.save
       redirect_to @johnson_call
