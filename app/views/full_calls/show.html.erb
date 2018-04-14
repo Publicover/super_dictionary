@@ -11,9 +11,7 @@
 
   <p>
     <strong>Oxford Definition:</strong>
-    <p><% @full_call.oxford_def.gsub('[', '').gsub(']', '').split(',').each do |definition| %>
-      <li><%= definition %></li></p>
-    <% end %>
+    <p><%= @full_call.oxford_def %>
 
   <p>
     <strong>Webster Definition:</strong>
