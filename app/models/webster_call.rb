@@ -1,4 +1,4 @@
-class WebsterCall < Keyword
+class WebsterCall < ApplicationRecord
   def self.webster_api(term)
     response = HTTParty.get("http://www.dictionaryapi.com/api/v1/references/collegiate/xml/#{term}?key=#{ENV["WEBSTER_KEY"]}")
     if response.include?("suggestion")

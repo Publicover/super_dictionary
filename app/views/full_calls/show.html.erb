@@ -3,21 +3,32 @@
 
 <center>
 
-  <h1>OXFORD CALLS</h1>
-  <p><h3>@full_call.definition.class: <%= @full_call.definition.class %></p></h3>
+  <h1>FULL CALLS</h1>
   <p>
     <strong>Word:</strong>
     <p><%= @full_call.word %></p>
   </p>
 
   <p>
-    <strong>Definition:</strong>
-    <p><% @full_call.definition.gsub('[', '').gsub(']', '').split(',').each do |definition| %>
+    <strong>Oxford Definition:</strong>
+    <p><% @full_call.oxford_def.gsub('[', '').gsub(']', '').split(',').each do |definition| %>
       <li><%= definition %></li></p>
-      <% end %>
+    <% end %>
+
+  <p>
+    <strong>Webster Definition:</strong>
+  <p><%= @full_call.webster_def %></p>
+
+  <p>
+    <strong>Johnson Definition:</strong>
+  <p><%= @full_call.johnson_def %></p>
+
+  <p>
+    <strong>Urban Definition:</strong>
+  <p><%= @full_call.urban_def %></p>
 
 <br>
-<p><%= link_to 'Make another word', new_oxford_call_path %></p>
-<p><%= link_to 'See all words', oxford_calls_path %></p>
+<p><%= link_to 'Make another word', new_full_call_path %></p>
+<p><%= link_to 'See all words', full_calls_path %></p>
 
 </center>

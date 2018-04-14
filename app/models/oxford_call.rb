@@ -1,7 +1,7 @@
 # rules for contacting the oxford API
 # require 'HTTParty'
 
-class OxfordCall < Keyword
+class OxfordCall < ApplicationRecord
   # include HTTParty
   # serialize(:definitions, JSON)
   # TODO: SERIALIZE
