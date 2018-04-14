@@ -1,7 +1,4 @@
-class WebsterCall < ApplicationRecord
-  include HTTParty
-  include Nokogiri
-
+class WebsterCall < Keyword
   def self.webster_api(term)
     response = HTTParty.get("http://www.dictionaryapi.com/api/v1/references/collegiate/xml/#{term}?key=#{ENV["WEBSTER_KEY"]}")
     if response.include?("suggestion")

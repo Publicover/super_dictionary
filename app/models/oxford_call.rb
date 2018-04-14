@@ -1,9 +1,9 @@
 # rules for contacting the oxford API
 # require 'HTTParty'
 
-class OxfordCall < ApplicationRecord
-  include HTTParty
-  serialize(:definitions, JSON)
+class OxfordCall < Keyword
+  # include HTTParty
+  # serialize(:definitions, JSON)
   # TODO: SERIALIZE
 
   def self.oxford_api(term)

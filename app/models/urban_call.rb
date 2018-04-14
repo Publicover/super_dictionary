@@ -1,8 +1,4 @@
 class UrbanCall < ApplicationRecord
-  include HTTParty
-  include Nokogiri
-  # include JSON
-
   def self.urban_api(term)
     response = HTTParty.get("https://mashape-community-urban-dictionary.p.mashape.com/define?term=#{term}",
       headers:{
