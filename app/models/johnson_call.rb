@@ -69,6 +69,9 @@ class JohnsonCall < ApplicationRecord
         })
       lookup["definition"]
       # "Word not found" if lookup == "null"
+      if lookup.body == "null"
+        return "That definition does not exist. Blame the year 1775."
+      end
     else
       self.get_sj_token
       self.johnson_api("#{term}")
