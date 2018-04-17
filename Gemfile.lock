@@ -42,12 +42,18 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (7.1.4)
     ast (2.3.0)
+    autoprefixer-rails (8.3.0)
+      execjs
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
     bcrypt (3.1.11)
     bindex (0.5.0)
+    bootstrap (4.1.0)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (>= 1.12.9, < 2)
+      sass (>= 3.5.2)
     builder (3.2.3)
     byebug (10.0.0)
     capybara (2.17.0)
@@ -123,6 +129,7 @@ GEM
     parser (2.4.0.2)
       ast (~> 2.3)
     pg (0.21.0)
+    popper_js (1.12.9)
     powerpack (0.1.1)
     public_suffix (3.0.1)
     puma (3.11.2)
@@ -256,6 +263,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+  bootstrap (~> 4.1.0)
   byebug
   capybara
   coffee-rails (~> 4.2)
@@ -280,6 +288,7 @@ DEPENDENCIES
   simplecov
   spring
   spring-watcher-listen (~> 2.0.0)
+  sprockets-rails
   sqlite3
   turbolinks (~> 5)
   tzinfo-data
