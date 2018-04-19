@@ -3,12 +3,11 @@
 
 <center>
   <p>
-    <strong>Word:</strong>
-    <p><%= @full_call.word %></p>
+    <h2><%= @full_call.word.upcase %></h2>
   </p>
 
 <div class="container">
-  <div class="card-title"><h2>FULL CALLS</h2>
+  <div class="card-title">
     <div class="card card-default">
       <div class="card-header"><strong>Oxford Definition:</strong></div>
       <div class="card-block"><%= @full_call.oxford_def %></div>
