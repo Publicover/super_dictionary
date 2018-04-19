@@ -38,8 +38,10 @@ gem 'jwt'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'httparty'
 # gem 'active_model_serializers', '~> 0.10.0'
-gem 'bootstrap', '~> 4.1.0'
-gem 'sprockets-rails'
+gem 'bootstrap', '~> 4.0.0.alpha3'
+# gem 'bootstrap_form'
+gem 'rails-ujs', '~> 5.1.0.beta1'
+# gem 'sprockets-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

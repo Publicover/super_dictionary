@@ -2,7 +2,7 @@
 <p>Find me in app/views/full_calls/new.html.erb</p>
 <center>
 
-<%= form_for @full_call do |f| %>
+<%= form_for @full_call, class: "form-group" do |f| %>
 
 <% if @full_call.errors.any? %>
   <div id="error_explanation">
@@ -17,11 +17,13 @@
   <% end %>
 
   <p>
-    <%= f.label "Word" %></br>
-    <%= f.text_field :word %>
+    <%= content_tag :div, class: "form-group" do %>
+      <%= f.label "Word" %></br>
+      <%= f.text_field :word %>
+    <% end %>
   </p>
 
-  <%= f.submit "CREATE SUPER DEFINITION" %>
+  <%= f.submit "CREATE SUPER DEFINITION", class: "btn btn-secondary"  %>
 <% end %>
 
 </center>

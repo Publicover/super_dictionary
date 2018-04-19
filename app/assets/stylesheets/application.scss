@@ -11,18 +11,22 @@
  * It is generally better to create a new file per style scope.
  *
  */
- @import "bootstrap";
+@import "bootstrap";
 
 #notice {
  color: red;
  background-color: white;
 }
 
-table {
-  width: 75%;
-}
+// table {
+  // width: 75%;
+// }
 
-td {
+// td {
   /* border-width: thin; */
   /* border-style: solid; */
-}
+// }
+
+// .panel-heading {
+//   background-color: lightgray;
+// }

@@ -2,31 +2,29 @@
 <p>Find me in app/views/full_calls/show.html.erb</p>
 
 <center>
-
-  <h1>FULL CALLS</h1>
   <p>
     <strong>Word:</strong>
     <p><%= @full_call.word %></p>
   </p>
 
-  <p>
-    <strong>Oxford Definition:</strong>
-    <p><%= @full_call.oxford_def %>
+<div class="container">
+  <div class="card-title"><h2>FULL CALLS</h2>
+    <div class="card card-default">
+      <div class="card-header"><strong>Oxford Definition:</strong></div>
+      <div class="card-block"><%= @full_call.oxford_def %></div>
 
-  <p>
-    <strong>Webster Definition:</strong>
-  <p><%= @full_call.webster_def %></p>
+      <div class="card-header"><strong>Webster Definition:</strong></div>
+      <div class="card-block"><%= @full_call.webster_def %></div>
 
-  <p>
-    <strong>Johnson Definition:</strong>
-  <p><%= @full_call.johnson_def %></p>
+      <div class="card-header"><strong>Johnson Definition:</strong></div>
+      <div class="card-block"><%= @full_call.johnson_def %></div>
 
-  <p>
-    <strong>Urban Definition:</strong>
-  <p><%= @full_call.urban_def %></p>
-
-<br>
+      <div class="card-header"><strong>Urban Definition:</strong></div>
+      <div class="card-block"><%= @full_call.urban_def %></div>
+    </div>
+  <div>
+</div>
+</br>
 <p><%= link_to 'Make another word', new_full_call_path %></p>
 <p><%= link_to 'See all words', full_calls_path %></p>
-
 </center>
