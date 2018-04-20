@@ -7,7 +7,6 @@ class JohnsonCall < ApplicationRecord
         "password": "#{ENV['SUPER_DICTIONARY_PW']}"
         }
       )
-
     @sj_token = @token_response['auth_token']
   end
 
@@ -21,9 +20,9 @@ class JohnsonCall < ApplicationRecord
           "Authorization": "#{@sj_token}"
         })
       lookup["definition"]
-      # if lookup.body == "null"
-      #   return "That definition does not exist. Blame the year 1775."
-      # end
+      if lookup.body == "null"
+        return "That definition does not exist. Blame the year 1775."
+      end
     else
       self.get_sj_token
       self.johnson_api("#{term}")

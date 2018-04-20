@@ -10,10 +10,11 @@
 
   <body>
     <p><%= link_to 'Log out', logout_path, method: :delete %>   |   <%= link_to 'Dashboard', root_path %></p>
+    <p id="notice"><%= notice %></p>
+    <p id="alert"><%= alert %>
       <div class="container-fluid">
         <%= yield %>
       </div>
-    <p id="notice"><%= notice %></p>
-    <p id="alert"><%= alert %>
+
   </body>
 </html>
