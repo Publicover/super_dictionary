@@ -8,10 +8,11 @@ class JohnsonCall < ApplicationRecord
         }
       )
     @sj_token = @token_response['auth_token']
+    # @sj_token_time = Time.now
   end
 
   def self.johnson_api(term)
-    if @sj_token
+    if @sj_token #&& @sj_token_time < Time.now - 24.hours
       lookup = HTTParty.get("https://samueljohnsonapi.herokuapp.com/words/#{term.capitalize}",
         :headers => {
           "name": "#{ENV['SUPER_DICTIONARY_NAME']}",
@@ -20,9 +21,9 @@ class JohnsonCall < ApplicationRecord
           "Authorization": "#{@sj_token}"
         })
       lookup["definition"]
-      if lookup.body == "null"
-        return "That definition does not exist. Blame the year 1775."
-      end
+      # if lookup.body == "null"
+      #   return "That definition does not exist. Blame the year 1775."
+      # end
     else
       self.get_sj_token
       self.johnson_api("#{term}")

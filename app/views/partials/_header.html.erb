@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand-sm bg-secondary navbar-dark navbar-static-top">
+  <ul class="navbar-nav justify-content-end ml-auto">
+    <a  class="navbar-brand">The Super Dictionary</a>
+      <!-- <img src="https://s3.us-east-2.amazonaws.com/super-dictionary/generic_dictionary.jpg" alt="The Dictionary"/> -->
+    <li class="nav-item">
+      <%= link_to "Dashboard", root_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Log out", logout_path, method: :delete, class: "nav-link" %>
+    </li>
+  </ul>
+</nav>
