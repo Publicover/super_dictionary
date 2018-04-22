@@ -9,11 +9,12 @@
   </head>
 
   <body>
-    <%= render 'partials/header' %>
-    <p id="notice"><%= notice %></p>
-    <p id="alert"><%= alert %>
+    <%= render 'partials/header' unless @disable_nav %>
       <div class="container-fluid">
+
         <%= yield %>
+        <p id="notice"><%= notice %></p>
+        <p id="alert"><%= alert %>
       </div>
 
   </body>

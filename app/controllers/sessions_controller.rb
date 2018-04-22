@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action :disable_nav
   def new
     # @session = Session.new
   end
@@ -21,4 +22,10 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to login_path, notice: 'You successfully logged out.'
   end
+
+  private
+
+    def disable_nav
+      @disable_nav = true
+    end
 end

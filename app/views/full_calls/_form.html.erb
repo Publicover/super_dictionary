@@ -1,0 +1,23 @@
+<%= form_for @full_call, class: "form-group" do |f| %>
+
+<% if @full_call.errors.any? %>
+  <div id="error_explanation">
+    <p>
+      <%= pluralize(@user.errors.count, "error") %> prohibited
+      this article from being saved:
+    </p>
+    <% @full_call.errors.full_messages.each do |msg| %>
+      <li><center><%= msg %></li>
+    <% end %>
+  </div>
+  <% end %>
+
+  <p>
+    <%= content_tag :div, class: "form-group" do %>
+      <%= f.label "Word" %></br>
+      <%= f.text_field :word %>
+    <% end %>
+  </p>
+
+  <%= f.submit "CREATE SUPER DEFINITION", class: "btn btn-secondary"  %>
+<% end %>
