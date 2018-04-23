@@ -54,4 +54,7 @@ class ApplicationController < ActionController::Base
   # def set_current_user
   #   User.current = current_user
   # end
+  def disable_nav
+    @disable_nav = true
+  end
 end

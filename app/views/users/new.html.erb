@@ -1,6 +1,6 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
-
+<br />
+<div class="auth-page-top"></div>
+<center>
 <h1>Sign Up</h1>
 
 <%= form_for @user do |f| %>
@@ -33,3 +33,6 @@
 
   <%= f.submit %>
 <% end %>
+<br />
+<%= link_to "Sign in if you've already signed up", login_path %>
+</center>

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :disable_nav
   def new
     @user = User.new
   end
