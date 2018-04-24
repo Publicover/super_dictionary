@@ -2,26 +2,20 @@
 <p>Find me in app/views/full_calls/index.html.erb</p>
 
 <center>
-<h1>Listing Words</h1>
-
+<h1>LISTING WORDS</h1>
 <table>
-  <tr>
-    <th>Word</th>
-    <th>Oxford Definition</th>
-    <th>Webster Definition</th>
-    <th>Johnson Definition</th>
-    <th>Urban Definition</th>
-  </tr>
+  <tbody>
+    <% @full_calls.in_groups_of(4, false) do |row| %>
+      <tr>
+        <% for word in row %>
+          <td><pre>
 
-  <% @full_calls.each do |word| %>
-    <tr>
-      <td><%= word.word %></td>
-      <td><%= word.oxford_def %></td>
-      <td><%= word.webster_def %></td>
-      <td><%= word.johnson_def %></td>
-      <td><%= word.urban_def %></td>
-    </tr>
-  <% end %>
+          <%= word %></pre></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
+
 <br>
 </center>

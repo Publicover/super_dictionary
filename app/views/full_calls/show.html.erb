@@ -27,16 +27,26 @@
       </div>
       <div class="card-block"><%= @full_call.webster_def %></div>
 
-      <div class="card-header"><strong>Johnson Definition:</strong>
+      <div class="card-header">
+        <strong>Johnson Definition:</strong>
         <div>
-          <button class="btn btn-outline-secondary btn-sm"><%= link_to 'VOTE JOHNSON', controller: 'full_calls', action: 'vote_johnson', id: @full_call %></div></button>
+          <button class="btn btn-outline-secondary btn-sm">
+            <%= link_to 'VOTE JOHNSON', controller: 'full_calls',
+                                        action: 'vote_johnson',
+                                        id: @full_call %>
+        </div></button>
         </div>
-
       <div class="card-block"><%= @full_call.johnson_def %></div>
 
-      <div class="card-header"><strong>Urban Definition:</strong>
-        <div>
-          <button class="btn btn-outline-secondary btn-sm"><%= link_to 'VOTE URBAN', controller: 'full_calls', action: 'vote_urban', id: @full_call %></div>
+      <div class="card-header">
+        <strong>Urban Definition:</strong>
+          <div>
+            <button class="btn btn-outline-secondary btn-sm">
+              <%= link_to 'VOTE URBAN', controller: 'full_calls',
+                                        action: 'vote_urban',
+                                        id: @full_call %>
+            </button>
+          </div>
         </div>
       </div>
       <div class="card-block"><%= @full_call.urban_def %></div>
@@ -47,3 +57,8 @@
 <p><%= link_to 'Make another word', root_path %></p>
 <p><%= link_to 'See all words', full_calls_path %></p>
 </center>
+
+
+
+<!-- (button_class).on_click
+  (this).attr(disable) -->

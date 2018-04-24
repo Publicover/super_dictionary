@@ -3,7 +3,8 @@ class FullCallsController < ApplicationController
     only: [:show, :vote_oxford, :vote_webster, :vote_johnson, :vote_urban]
 
   def index
-    @full_calls = FullCall.all
+    # @full_calls = FullCall.all
+    @full_calls = FullCall.select(:word).map(&:word).uniq
   end
 
   def show
