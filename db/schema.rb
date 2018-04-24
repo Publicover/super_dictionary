@@ -14,12 +14,17 @@ ActiveRecord::Schema.define(version: 20180414022007) do
 
   create_table "full_calls", force: :cascade do |t|
     t.string   "word"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "urban_voate",  default: 0
     t.text     "oxford_def"
     t.text     "webster_def"
     t.text     "johnson_def"
     t.text     "urban_def"
+    t.integer  "oxford_vote",  default: 0
+    t.integer  "webster_vote", default: 0
+    t.integer  "johnson_vote", default: 0
+    t.integer  "urban_vote",   default: 0
   end
 
   create_table "johnson_calls", force: :cascade do |t|
