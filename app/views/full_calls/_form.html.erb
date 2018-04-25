@@ -1,4 +1,4 @@
-<%= form_for @full_call, class: "form-group" do |f| %>
+<%= form_for @full_call, class: "form-group form-inline" do |f| %>
 
 <% if @full_call.errors.any? %>
   <div id="error_explanation">
@@ -12,12 +12,12 @@
   </div>
   <% end %>
 
-  <p>
+
     <%= content_tag :div, class: "form-group" do %>
-      <%= f.label "LOOK UP A WORD" %></br>
+      <%= f.label "SEE A WORD" %>
       <%= f.text_field :word %>
     <% end %>
-  </p>
 
-  <%= f.submit "GET DEFINITIONS", class: "btn btn-secondary"  %>
+
+  <%= f.submit "Submit", class: "btn btn-secondary"  %>
 <% end %>
