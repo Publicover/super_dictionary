@@ -5,24 +5,25 @@
   <p>
     <h2><%= @full_call.word.upcase %></h2>
   </p>
-
 <div class="container">
   <div class="card-title">
     <div class="card card-default">
       <div class="card-header"><strong>Oxford Definition:</strong>
-        <!-- <div class="float-right"> -->
-
-
-
-          <div>
-            <button class="btn btn-outline-secondary btn-sm">
-              <%= link_to 'VOTE OXFORD', controller: 'full_calls', action: 'vote_oxford', id: @full_call, class: "btn btn-outline-secondary btn-sm" %></button></div>
-          </div>
+        <div>
+          <%= form_for @full_call do |f| %>
+            <%= f.hidden_field :oxford_vote %>
+            <%= f.submit "VOTE OXFORD", class: "btn btn-outline-secondary btn-sm" %>
+          <% end %>
+        </div>
+        </div>
       <div class="card-block"><%= @full_call.oxford_def %></div>
 
       <div class="card-header"><strong>Webster Definition:</strong>
         <div>
-           <button class="btn btn-outline-secondary btn-sm"><%= link_to 'VOTE WEBSTER', controller: 'full_calls', action: 'vote_webster', id: @full_call %></button>
+          <%= form_for @full_call do |f| %>
+            <%= f.hidden_field :webster_vote %>
+            <%= f.submit "VOTE WEBSTER", class: "btn btn-outline-secondary btn-sm" %>
+          <% end %>
         </div>
       </div>
       <div class="card-block"><%= @full_call.webster_def %></div>
@@ -30,29 +31,26 @@
       <div class="card-header">
         <strong>Johnson Definition:</strong>
         <div>
-          <button class="btn btn-outline-secondary btn-sm">
-            <%= link_to 'VOTE JOHNSON', controller: 'full_calls',
-                                        action: 'vote_johnson',
-                                        id: @full_call %>
-        </div></button>
+          <%= form_for @full_call do |f| %>
+            <%= f.hidden_field :johnson_vote %>
+            <%= f.submit "VOTE JOHNSON", class: "btn btn-outline-secondary btn-sm" %>
+          <% end %>
         </div>
       <div class="card-block"><%= @full_call.johnson_def %></div>
 
       <div class="card-header">
         <strong>Urban Definition:</strong>
           <div>
-            <button class="btn btn-outline-secondary btn-sm">
-              <%= link_to 'VOTE URBAN', controller: 'full_calls',
-                                        action: 'vote_urban',
-                                        id: @full_call %>
-            </button>
+            <%= form_for @full_call do |f| %>
+              <%= f.hidden_field :urban_vote %>
+              <%= f.submit "VOTE URBAN", class: "btn btn-outline-secondary btn-sm" %>
+            <% end %>
           </div>
         </div>
+        <div class="card-block"><%= @full_call.urban_def %></div>
       </div>
-      <div class="card-block"><%= @full_call.urban_def %></div>
+
     </div>
-  <div>
-</div>
 </br>
 <p><%= link_to 'Make another word', root_path %></p>
 <p><%= link_to 'See all words', full_calls_path %></p>

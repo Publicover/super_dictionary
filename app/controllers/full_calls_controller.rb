@@ -34,7 +34,8 @@ class FullCallsController < ApplicationController
   end
 
   def update
-    # @full_call = FullCall
+    @full_call = FullCall.find(params[:id])
+    redirect_to @full_call
   end
 
   def destroy
