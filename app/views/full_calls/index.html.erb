@@ -10,7 +10,7 @@
         <% for word in row %>
           <td><pre>
 
-          <%= word %></pre></td>
+          <%= link_to "#{word}", full_calls_path(full_call: {word: "#{word}" }), method: 'post' %>
         <% end %>
       </tr>
     <% end %>
