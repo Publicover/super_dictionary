@@ -1,6 +1,3 @@
-<!-- <h1>FullCalls#show</h1>
-<p>Find me in app/views/full_calls/show.html.erb</p> -->
-
 <center>
   <p>
     <h2><%= @full_call.word.upcase %></h2>
@@ -10,50 +7,47 @@
     <div class="card card-default">
       <div class="card-header"><strong>Oxford Definition:</strong>
         <div>
-            <%= button_to 'VOTE OXFORD', controller: 'full_calls',
-                                       action: 'vote_oxford',
-                                       id: @full_call,
-                                       class: "btn btn-outline-secondary btn-sm" %>
-          </div>
+          <%= button_to('VOTE OXFORD', { controller: 'full_calls',
+                                         action: 'vote_oxford',
+                                         id: @full_call },
+                                       { class: "btn btn-outline-secondary btn-sm" }) %>
         </div>
-      <div class="card-block"><%= @full_call.oxford_def %></div>
+      </div>
+    <div class="card-block"><%= @full_call.oxford_def %></div>
 
-      <div class="card-header"><strong>Webster Definition:</strong>
-        <div>
-             <%= button_to 'VOTE WEBSTER', controller: 'full_calls',
+    <div class="card-header"><strong>Webster Definition:</strong>
+      <div>
+         <%= button_to('VOTE WEBSTER', { controller: 'full_calls',
                                          action: 'vote_webster',
-                                         id: @full_call,
-                                         class: "btn btn-outline-secondary btn-sm" %>
-        </div>
+                                         id: @full_call },
+                                       { class: "btn btn-outline-secondary btn-sm" }) %>
       </div>
-      <div class="card-block"><%= @full_call.webster_def %></div>
-
-      <div class="card-header">
-        <strong>Johnson Definition:</strong>
-        <div>
-            <%= button_to 'VOTE JOHNSON', controller: 'full_calls',
-                                        action: 'vote_johnson',
-                                        id: @full_call,
-                                        class: "btn btn-outline-secondary btn-sm" %>
-          </div>
-        </div>
-      <div class="card-block"><%= @full_call.johnson_def %></div>
-
-      <div class="card-header">
-        <strong>Urban Definition:</strong>
-          <div>
-            <!-- <button class="btn btn-outline-secondary btn-sm"> -->
-              <%= button_to 'VOTE URBAN', controller: 'full_calls',
-                                        action: 'vote_urban',
-                                        id: @full_call,
-                                        class: "btn btn-outline-secondary btn-sm" %>
-            <!-- </button> -->
-          </div>
-        </div>
-        <div class="card-block"><%= @full_call.urban_def %></div>
-      </div>
-
     </div>
+    <div class="card-block"><%= @full_call.webster_def %></div>
+
+    <div class="card-header">
+      <strong>Johnson Definition:</strong>
+      <div>
+          <%= button_to('VOTE JOHNSON', { controller: 'full_calls',
+                                          action: 'vote_johnson',
+                                          id: @full_call },
+                                        { class: "btn btn-outline-secondary btn-sm" }) %>
+        </div>
+      </div>
+    <div class="card-block"><%= @full_call.johnson_def %></div>
+
+    <div class="card-header">
+      <strong>Urban Definition:</strong>
+        <div>
+          <%= button_to('VOTE URBAN', { controller: 'full_calls',
+                                        action: 'vote_urban',
+                                        id: @full_call },
+                                      { class: "btn btn-outline-secondary btn-sm" }) %>
+        </div>
+      </div>
+    <div class="card-block"><%= @full_call.urban_def %></div>
+    </div>
+  </div>
 </br>
 <p><%= link_to 'Make another word', root_path %></p>
 <p><%= link_to 'See all words', full_calls_path %></p>
