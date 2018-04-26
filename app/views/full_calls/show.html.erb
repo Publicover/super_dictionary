@@ -9,7 +9,8 @@
         <div>
           <%= button_to('VOTE OXFORD', { controller: 'full_calls',
                                          action: 'vote_oxford',
-                                         id: @full_call },
+                                         id: @full_call,
+                                         remote: true },
                                        { class: "btn btn-outline-secondary btn-sm" }) %>
         </div>
       </div>

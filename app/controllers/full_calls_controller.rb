@@ -35,9 +35,9 @@ class FullCallsController < ApplicationController
 
   def update
     # @full_call = FullCall.find(params[:id])
-    if @full_call.save
-      redirect_to @full_call
-    end
+    # if @full_call.save
+    #   redirect_to @full_call
+    # end
   end
 
   def destroy
@@ -47,25 +47,25 @@ class FullCallsController < ApplicationController
   def vote_oxford
     @full_call.oxford_vote += 1
     @full_call.save
-    redirect_to :back, notice: 'Vote registered'
+    # redirect_to :back, notice: 'Vote registered'
   end
 
   def vote_webster
     @full_call.webster_vote += 1
     @full_call.save
-    redirect_to :back, notice: 'Vote registered'
+    # redirect_to :back, notice: 'Vote registered'
   end
 
   def vote_johnson
     @full_call.johnson_vote += 1
     @full_call.save
-    redirect_to :back, notice: 'Vote registered'
+    # redirect_to :back, notice: 'Vote registered'
   end
 
   def vote_urban
     @full_call.urban_vote += 1
     @full_call.save
-    redirect_to :back, notice: 'Vote registered'
+    # redirect_to :back, notice: 'Vote registered'
   end
 
   private
