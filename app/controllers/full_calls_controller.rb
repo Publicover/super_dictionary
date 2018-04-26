@@ -1,6 +1,6 @@
 class FullCallsController < ApplicationController
   before_action :set_full_call,
-    only: [:show, :vote_oxford, :vote_webster, :vote_johnson, :vote_urban]
+    only: [:show, :update, :vote_oxford, :vote_webster, :vote_johnson, :vote_urban]
 
   def index
     # @full_calls = FullCall.all
@@ -34,8 +34,10 @@ class FullCallsController < ApplicationController
   end
 
   def update
-    @full_call = FullCall.find(params[:id])
-    redirect_to @full_call
+    # @full_call = FullCall.find(params[:id])
+    if @full_call.save
+      redirect_to @full_call
+    end
   end
 
   def destroy
