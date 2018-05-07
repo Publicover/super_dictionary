@@ -26,6 +26,13 @@ class FullCallsController < ApplicationController
     @full_call.johnson_def = JohnsonCall.johnson_api(@full_call.word)
     @full_call.urban_def = UrbanCall.urban_api(@full_call.word)
 
+    # @full_call = FullCall.where(word: full_call_params[:word]).first_or_create do |call|
+    #   call.oxford_def = OxfordCall.oxford_api(call.word)
+    #   call.webster_def = WebsterCall.webster_api(call.word)
+    #   call.johnson_def = JohnsonCall.johnson_api(call.word)
+    #   call.urban_def = UrbanCall.urban_api(call.word)
+    # end
+
     if @full_call.save
       redirect_to @full_call
     else
@@ -47,6 +54,10 @@ class FullCallsController < ApplicationController
   def vote_oxford
     @full_call.oxford_vote += 1
     @full_call.save
+    # respond_to do |format|
+    #   format.html {redirect_to :back}
+    #   format.js {}
+    # end
     # redirect_to :back, notice: 'Vote registered'
   end
 
