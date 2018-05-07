@@ -1,3 +1,3 @@
 class FullCall < ApplicationRecord
-  attr_reader :word
+  # attr_reader :word
 end

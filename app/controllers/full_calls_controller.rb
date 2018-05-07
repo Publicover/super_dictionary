@@ -20,18 +20,12 @@ class FullCallsController < ApplicationController
   end
 
   def create
-    @full_call = FullCall.new(full_call_params)
-    @full_call.oxford_def = OxfordCall.oxford_api(@full_call.word)
-    @full_call.webster_def = WebsterCall.webster_api(@full_call.word)
-    @full_call.johnson_def = JohnsonCall.johnson_api(@full_call.word)
-    @full_call.urban_def = UrbanCall.urban_api(@full_call.word)
-
-    # @full_call = FullCall.where(word: full_call_params[:word]).first_or_create do |call|
-    #   call.oxford_def = OxfordCall.oxford_api(call.word)
-    #   call.webster_def = WebsterCall.webster_api(call.word)
-    #   call.johnson_def = JohnsonCall.johnson_api(call.word)
-    #   call.urban_def = UrbanCall.urban_api(call.word)
-    # end
+    @full_call = FullCall.where(word: full_call_params[:word]).first_or_create do |call|
+      call.oxford_def = OxfordCall.oxford_api(call.word)
+      call.webster_def = WebsterCall.webster_api(call.word)
+      call.johnson_def = JohnsonCall.johnson_api(call.word)
+      call.urban_def = UrbanCall.urban_api(call.word)
+    end
 
     if @full_call.save
       redirect_to @full_call
