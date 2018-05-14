@@ -1,6 +1,6 @@
 class FullCallsController < ApplicationController
-  before_action :set_full_call,
-    only: [:show, :update, :vote_oxford, :vote_webster, :vote_johnson, :vote_urban]
+  before_action :logged_in?, :set_full_call,
+    only: [:show, :index, :update, :vote_oxford, :vote_webster, :vote_johnson, :vote_urban]
 
   def index
     # @full_calls = FullCall.all
@@ -25,6 +25,7 @@ class FullCallsController < ApplicationController
       call.webster_def = WebsterCall.webster_api(call.word)
       call.johnson_def = JohnsonCall.johnson_api(call.word)
       call.urban_def = UrbanCall.urban_api(call.word)
+      # call.lookup_count += 1
     end
 
     if @full_call.save

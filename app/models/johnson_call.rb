@@ -1,4 +1,4 @@
-class JohnsonCall < ApplicationRecord
+class JohnsonCall 
   def self.get_sj_token
     @token_response = HTTParty.post('https://samueljohnsonapi.herokuapp.com/auth/login',
       :body => {
