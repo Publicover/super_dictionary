@@ -59,16 +59,19 @@
 //   });
 // });
 
-// $(document).on('turbolinks:load', function() {
-//   // $('.vote-btn').on('submit', function() {
-//   // // $('.button_to').on('submit', function() {
-//   //   // $(this).css('color', 'red');
-//   //   // $(this).css('background-color', 'red');
-//   //   $(this).attr('disabled', true);
-//   // })
-//   $('.vote-btn').on('click', function() {
-//     // $(this).css('color', 'white');
-//     $(this).attr('disabled', true);
-//     // alert(event.body);
-//   })
-// });
+$(document).on('turbolinks:load', function() {
+  // $('.vote-btn').on('submit', function() {
+  // // $('.button_to').on('submit', function() {
+  //   // $(this).css('color', 'red');
+  //   // $(this).css('background-color', 'red');
+  //   $(this).attr('disabled', true);
+  // })
+  $('.vote-btn').on('click', function() {
+  // $('.vote-btn').closest('form').on('ajax:complete', function() {
+  // $('.vote-btn').parents('form').on('click', function() {
+    $(this).css('color', 'white');
+    $(this).attr('disabled', true);
+    console.log('ajax:success!');
+    // alert(event.body);
+  });
+});
