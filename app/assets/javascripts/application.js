@@ -17,6 +17,15 @@
 //= require turbolinks
 //= require_tree .
 
+$(document).on('turbolinks:load', function() {
+  $('.vote-btn').on('click', function() {
+    setTimeout(function() {
+      $('.vote-btn').attr('disabled', true);
+      $('#full-call-alert').append("<h5>Thanks for voting!</h5>").hide().slideDown('slow');
+    }, 100);
+  });
+});
+
 // $(document).on('turbolinks:load', function()  {
 // // $(document).on 'turbolinks:load', ->
 // // $(document).on('page:change', function(){
@@ -58,7 +67,7 @@
 //   });
 // });
 
-$(document).on('turbolinks:load', function() {
+
   // $('.vote-btn').on('submit', function() {
   // // $('.button_to').on('submit', function() {
   //   // $(this).css('color', 'red');
@@ -75,13 +84,7 @@ $(document).on('turbolinks:load', function() {
   //   // $("<h5 id='full-call-alert'>Thanks for voting!</h5>").appendTo($('#full-call-heading'));
   //   // alert(event.body);
   // });
-  $('.vote-btn').on('click', function() {
-    setTimeout(function() {
-      $('.vote-btn').attr('disabled', true);
+
       // $('#full-call-heading').append("<h5 id='full-call-alert'>Thanks for voting!</h5>");
       // $('#full-call-heading').find('#full-call-alert:last').slideDown("slow");
       // $("<div><h5 id='full-call-alert'>Thanks for voting!</h5></div>").appendTo($('#full-call-heading').hide().slideDown('slow'));
-      $('#full-call-alert').append("<h5>Thanks for voting!</h5>").hide().slideDown('slow');
-    }, 100);
-  });
-});
