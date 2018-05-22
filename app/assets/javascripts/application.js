@@ -17,7 +17,8 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).on('turbolinks:load', function() {
+// $(document).on('turbolinks:load', function() {
+$(document).ready(function() {
   $('.vote-btn').on('click', function() {
     setTimeout(function() {
       $('.vote-btn').attr('disabled', true);
@@ -25,6 +26,10 @@ $(document).on('turbolinks:load', function() {
     }, 100);
   });
 });
+
+// $(document).ready(function() {
+//   console.log("ready");
+// });
 
 // $(document).on('turbolinks:load', function()  {
 // // $(document).on 'turbolinks:load', ->
