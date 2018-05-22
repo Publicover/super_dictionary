@@ -11,14 +11,14 @@
 // about supported directives.
 
 //= require jquery
+//= require rails-ujs
 //= require bootstrap
 //= require bootstrap-sprockets
-//= require rails-ujs
 //= require turbolinks
 //= require_tree .
 
-// $(document).on('turbolinks:load', function() {
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
+// $(document).ready(function() {
   $('.vote-btn').on('click', function() {
     setTimeout(function() {
       $('.vote-btn').attr('disabled', true);
