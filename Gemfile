@@ -42,6 +42,7 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 # gem 'bootstrap_form'
 gem 'rails-ujs', '~> 5.1.0.beta1'
 # gem 'sprockets-rails'
+gem 'rails-assets-tether', '>= 1.1.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
