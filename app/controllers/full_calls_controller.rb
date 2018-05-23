@@ -1,6 +1,6 @@
 class FullCallsController < ApplicationController
   before_action :logged_in?, :set_full_call,
-    only: [:show, :index, :update, :vote_oxford, :vote_webster, :vote_johnson, :vote_urban]
+    only: [:show, :update, :vote_oxford, :vote_webster, :vote_johnson, :vote_urban]
 
   def index
     # @full_calls = FullCall.all
