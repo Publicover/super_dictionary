@@ -56,11 +56,21 @@ class FullCallsController < ApplicationController
     #   format.js {}
     # end
     # redirect_to :back, notice: 'Vote registered'
+<<<<<<< HEAD
+=======
+    unless !browser.device.mobile? && @full_call.save
+      render 'full_calls/_mobile'
+    end
+>>>>>>> mobile_download
   end
 
   def vote_webster
     @full_call.webster_vote += 1
     @full_call.save
+    unless !browser.device.mobile? && @full_call.save
+      render 'full_calls/_mobile'
+    end
+
     # redirect_to :back, notice: 'Vote registered'
   end
 
@@ -68,12 +78,18 @@ class FullCallsController < ApplicationController
     @full_call.johnson_vote += 1
     @full_call.save
     # redirect_to :back, notice: 'Vote registered'
+    unless !browser.device.mobile? && @full_call.save
+      render 'full_calls/_mobile'
+    end
   end
 
   def vote_urban
     @full_call.urban_vote += 1
     @full_call.save
     # redirect_to :back, notice: 'Vote registered'
+    unless !browser.device.mobile? && @full_call.save
+      render 'full_calls/_mobile'
+    end
   end
 
   private
