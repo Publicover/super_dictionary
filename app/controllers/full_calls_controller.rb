@@ -1,5 +1,7 @@
 class FullCallsController < ApplicationController
-  before_action :logged_in?, :set_full_call,
+  before_action :logged_in?,
+    only: [:show, :index, :update, :vote_oxford, :vote_webster, :vote_johnson, :vote_urban]
+  before_action :set_full_call,
     only: [:show, :update, :vote_oxford, :vote_webster, :vote_johnson, :vote_urban]
 
   def index
