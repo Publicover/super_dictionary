@@ -56,7 +56,6 @@ class FullCallsController < ApplicationController
     #   format.js {}
     # end
     # redirect_to :back, notice: 'Vote registered'
-    head :ok
   end
 
   def vote_webster
