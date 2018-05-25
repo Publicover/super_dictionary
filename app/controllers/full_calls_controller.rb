@@ -49,8 +49,10 @@ class FullCallsController < ApplicationController
   end
 
   def vote_oxford
-    @full_call.oxford_vote += 1
-    @full_call.save
+    # @full_call.oxford_vote += 1
+    # @full_call.update
+
+    @full_call.update_attribute(:oxford_vote, @full_call.oxford_vote + 1)
     # respond_to do |format|
     #   format.html {redirect_to :back}
     #   format.js {}
@@ -59,21 +61,24 @@ class FullCallsController < ApplicationController
   end
 
   def vote_webster
-    @full_call.webster_vote += 1
-    @full_call.save
+    # @full_call.webster_vote += 1
+    # @full_call.save
     # redirect_to :back, notice: 'Vote registered'
+    @full_call.update_attribute(:webster_vote, @full_call.webster_vote + 1)
   end
 
   def vote_johnson
-    @full_call.johnson_vote += 1
-    @full_call.save
+    # @full_call.johnson_vote += 1
+    # @full_call.save
     # redirect_to :back, notice: 'Vote registered'
+    @full_call.update_attribute(:johnson_vote, @full_call.johnson_vote + 1)
   end
 
   def vote_urban
-    @full_call.urban_vote += 1
-    @full_call.save
+    # @full_call.urban_vote += 1
+    # @full_call.save
     # redirect_to :back, notice: 'Vote registered'
+    @full_call.update_attribute(:urban_vote, @full_call.urban_vote + 1)
   end
 
   private
