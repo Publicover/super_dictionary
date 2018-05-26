@@ -11,6 +11,9 @@
   <div class="card-title">
     <div class="card card-default">
       <div class="card-header"><strong>Oxford Definition:</strong>
+        <p>
+          <%= @full_call.oxford_def.class %>
+        </p>
         <div>
           <%= button_to('VOTE OXFORD', { controller: 'full_calls',
                                          action: 'vote_oxford',
@@ -20,12 +23,17 @@
                                        { class: "btn btn-outline-secondary btn-sm vote-btn" }) %>
         </div>
       </div>
-    <div class="card-block"><%= @full_call.oxford_def %></div>
+    <div class="card-block"><% @full_call.oxford_def.gsub(/\[/, '').gsub(/\]/, '').split(/",/).each do |string| %>
+    <li>
+      <%= string.gsub(/"/, '') %>
+      <% end %>
+    </li></div>
 
     <div class="card-header"><strong>Webster Definition:</strong>
       <div>
          <%= button_to('VOTE WEBSTER', { controller: 'full_calls',
                                          action: 'vote_webster',
+                                         method: :post,
                                          id: @full_call,
                                          remote: true },
                                        { class: "btn btn-outline-secondary btn-sm vote-btn" }) %>
@@ -38,6 +46,7 @@
       <div>
           <%= button_to('VOTE JOHNSON', { controller: 'full_calls',
                                           action: 'vote_johnson',
+                                          method: :post,
                                           id: @full_call,
                                           remote: true },
                                         { class: "btn btn-outline-secondary btn-sm vote-btn" }) %>
@@ -50,6 +59,7 @@
         <div>
           <%= button_to('VOTE URBAN', { controller: 'full_calls',
                                         action: 'vote_urban',
+                                        method: :post,
                                         id: @full_call,
                                         remote: true },
                                       { class: "btn btn-outline-secondary btn-sm vote-btn" }) %>

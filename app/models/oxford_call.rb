@@ -15,10 +15,25 @@ class OxfordCall < ApplicationRecord
       "NO DEFINITION"
     else
       defs = []
-      def_block = response["results"][0]["lexicalEntries"][0]["entries"][0]["senses"]
-      def_block.each do |word|
-        defs << word["definitions"]
+      response["results"][0]["lexicalEntries"][0]["entries"][0]["senses"].each do |ary|
+        ary.each do |k, v|
+          defs << "#{v[0].capitalize}" if k == "definitions"
+          defs << "Subsense: #{v[0]['definitions'][0]}" if k == 'subsenses'
+        end
       end
+      # response["results"][0]["lexicalEntries"][0]["entries"][0]["senses"].each do |ary|
+      #   ary.each do |k, v|
+      #     defs << v if k == "definitions"
+      #     defs << "Subsense: #{v[0]['definitions'][0]}" if k == 'subsenses'
+      #   end
+      # end
+      #
+      # response["results"][0]["lexicalEntries"][1]["entries"][0]["senses"].each do |ary|
+      #   ary.each do |k, v|
+      #     defs << v if k == "definitions"
+      #     defs << "Subsense: #{v[0]['definitions'][0]}" if k == 'subsenses'
+      #   end
+      # end
       defs
     end
   end
