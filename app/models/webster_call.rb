@@ -4,13 +4,12 @@ class WebsterCall < ApplicationRecord
     if response.include?("suggestion")
       "FAILED"
     else
-      defs = []
+      # defs = []
       doc_response = Nokogiri::XML(response)
-      defs << doc_response.css('dt').text#.gsub!(':', "\n")
-      # defs << Hash.from_xml(doc_response)["entry list"]["entry id"]["def"].inject({}) do |result, element|
-      #   result[element["sn"]] = element["dt"]
+      doc_response.xpath('//def//dt/text()')#.text.split(':')#.each do |string|
+      #   defs << string.capitalize
       # end
-      defs
+      # defs
     end
   end
 end
