@@ -11,8 +11,6 @@
   <div class="card-title">
     <div class="card card-default">
       <div class="card-header"><strong>Oxford Definition:</strong>
-        <p>
-        </p>
         <div>
           <%= button_to('VOTE OXFORD', { controller: 'full_calls',
                                          action: 'vote_oxford',
@@ -38,9 +36,9 @@
                                        { class: "btn btn-outline-secondary btn-sm vote-btn" }) %>
       </div>
     </div>
-    <div class="card-block"><% @full_call.webster_def.sub(/:/, '').delete('["]').split(/:/).each do |string| %>
+    <div class="card-block"><% @full_call.webster_def.sub(/:/, '').gsub(/,$/, '').delete('["]').split(/:/).each do |string| %>
       <li>
-        <%= string.capitalize %>
+          <%= string.capitalize.gsub(/,$/, '') %>
         <% end %>
       </li>
     </div>

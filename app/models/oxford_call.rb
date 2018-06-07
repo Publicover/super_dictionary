@@ -13,6 +13,8 @@ class OxfordCall < ApplicationRecord
 
     if response.include?("!DOCTYPE")
       "NO DEFINITION"
+    elsif response["results"][0]["lexicalEntries"][0]["entries"][0]["senses"][0]['crossReferenceMarkers']
+      response["results"][0]["lexicalEntries"][0]["entries"][0]["senses"][0]['crossReferenceMarkers'].capitalize
     else
       defs = []
       response["results"][0]["lexicalEntries"][0]["entries"][0]["senses"].each do |ary|
